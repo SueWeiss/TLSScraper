@@ -12,27 +12,11 @@ namespace _5_13Scraper.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            List<Article> items = Api.ScrapeTls();
+            return View(items);
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
